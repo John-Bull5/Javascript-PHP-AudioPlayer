@@ -1,0 +1,11 @@
+{
+    "name": "b/audio-player",
+    "description": "A javascript audio player",
+    "authors": [
+        {
+            "name": "Ifeanyichukwu John",
+            "email": "ifeanychukwujohn70@gmail.com"
+        }
+    ],
+    "require": {}
+}
