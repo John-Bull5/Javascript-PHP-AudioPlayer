@@ -1,0 +1,115 @@
+html,body{
+    height: 100%;
+}
+
+body{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.audioPlayer{
+    box-shadow: 0 0 32px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Verdena';
+    width: 600px;
+    min-height: 300px;
+    display: flex;
+    position: relative;
+}
+
+.toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.rotate {
+    animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+canvas{
+    flex: 2;
+    width: 95%;
+    background-color: black;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.imgContainer{
+    flex: 2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+}
+.imgContainer div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid yellowgreen;
+    background-color: blue;
+    box-shadow: 0 0 32px 4px rgba(0, 0, 0, 0.2);
+}
+.imgContainer img{
+    display: inline-block;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+.playlist{
+    flex: 1;
+    background: linear-gradient(270deg,rgba(0,0,0,0.5) 0%,rgba(55,55,55,0.6));
+    display: flex;
+    flex-direction: column;
+}
+.playlist div{
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+.playlist div a{
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.playlist div a:nth-child(1){
+    /* width: 10%; */
+    padding: 5px;
+    background-color: none !important;
+}
+.playlist div a:nth-child(2){
+    width: 90%;
+}
+
+.playlist div a:not(.editBtn):hover{
+    background: white;
+    color: black;
+}
+.playlist div a i{
+    font-size: .75rem;
+    margin-right: .5rem;
+}
