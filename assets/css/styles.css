@@ -60,14 +60,14 @@ canvas{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    width: 200px;
+    height: 210px;
+    width: 210px;
     border-radius: 50%;
     border: 5px solid yellowgreen;
     background-color: blue;
     box-shadow: 0 0 32px 4px rgba(0, 0, 0, 0.2);
 }
-.imgContainer img{
+.imgContainer div img{
     display: inline-block;
     border-radius: 50%;
     height: 200px;
