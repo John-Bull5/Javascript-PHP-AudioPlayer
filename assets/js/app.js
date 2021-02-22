@@ -1,8 +1,7 @@
 import AudioPlayer from './AudioPlayer.js';
 
 
-const localSongArray = [
-    {
+const localSongArray = [{
         songPath: '/src/songs/backstreet boys.mp3',
         songName: 'backstreet boys',
         songPic: '/src/img/music.jpg'
@@ -31,38 +30,53 @@ const localSongArray = [
 ];
 
 $(document).ready(function () {
-    $.ajax({
-        type: "GET",
-        dataType: 'json', //text
-        async: true,
-        url: "/songs.php",
-        success: function (songArray) {
-           if (songArray.length < 1) {
-                const audioPlayer = new AudioPlayer('.audioPlayer', localSongArray)
-           } else {
-                const audioPlayer = new AudioPlayer('.audioPlayer', songArray)
-           } 
-            const toggleBtn = document.querySelector('.toggleBtn');
-            const ImgContainer = document.querySelector('.imgContainer');
-            const playerElem = document.querySelector('.audioPlayer')
-            const canvas = document.querySelector('canvas');
-            toggleBtn.addEventListener('click', toggleView);
+    const audioPlayer = new AudioPlayer('.audioPlayer', localSongArray);
+    const toggleBtn = document.querySelector('.toggleBtn');
+    const ImgContainer = document.querySelector('.imgContainer');
+    const playerElem = document.querySelector('.audioPlayer')
+    const canvas = document.querySelector('canvas');
+    toggleBtn.addEventListener('click', toggleView);
 
-            function toggleView() {
-                if (playerElem.contains(canvas)) {
-                    playerElem.removeChild(canvas);
-                    playerElem.appendChild(ImgContainer)
-                    ImgContainer.style.display = 'flex'
-                } else {
-                    playerElem.appendChild(canvas);
-                    playerElem.removeChild(ImgContainer)
+    function toggleView() {
+        if (playerElem.contains(canvas)) {
+            playerElem.removeChild(canvas);
+            playerElem.appendChild(ImgContainer)
+            ImgContainer.style.display = 'flex'
+        } else {
+            playerElem.appendChild(canvas);
+            playerElem.removeChild(ImgContainer)
 
-                }
-            }
         }
-    })
+    }
 });
 
+// $.ajax({
+//     type: "GET",
+//     dataType: 'json', //text
+//     async: true,
+//     url: "/songs.php",
+//     success: function (songArray) {
+//        if (songArray.length < 1) {
+//             const audioPlayer = new AudioPlayer('.audioPlayer', localSongArray)
+//        } else {
+//             const audioPlayer = new AudioPlayer('.audioPlayer', songArray)
+//        } 
+//         const toggleBtn = document.querySelector('.toggleBtn');
+//         const ImgContainer = document.querySelector('.imgContainer');
+//         const playerElem = document.querySelector('.audioPlayer')
+//         const canvas = document.querySelector('canvas');
+//         toggleBtn.addEventListener('click', toggleView);
 
+//         function toggleView() {
+//             if (playerElem.contains(canvas)) {
+//                 playerElem.removeChild(canvas);
+//                 playerElem.appendChild(ImgContainer)
+//                 ImgContainer.style.display = 'flex'
+//             } else {
+//                 playerElem.appendChild(canvas);
+//                 playerElem.removeChild(ImgContainer)
 
-
+//             }
+//         }
+//     }
+// })
