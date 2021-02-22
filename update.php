@@ -54,7 +54,8 @@ if (isset($_POST['upload']))
         $statement->bindParam(":songPic", $tempImageFilePath);
 
         $statement->execute();
-        //header('location:index.html');
+        header('location:index.php');
     }
+    //https://guarded-savannah-26323.herokuapp.com/
 }
 ?>

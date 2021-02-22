@@ -45,7 +45,7 @@ if (isset($_POST['upload'])) {
         $statement->bindParam(":songPath", $tempSongFilePath);
 
         $statement->execute();
-        header('location:index.html');
+        header('location:index.php');
     } else {
         echo 'an error occured';
     }
