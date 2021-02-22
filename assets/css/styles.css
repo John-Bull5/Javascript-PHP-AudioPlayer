@@ -18,7 +18,30 @@ body{
     display: flex;
     position: relative;
 }
+@media screen and (max-width:460px){
+    html,body{
+        min-height: 100vh !important;
+    }
+    body{
+        justify-content: flex-start;
+    }
+    .audioPlayer{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100%;
+    }
 
+    .imgContainer div{
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    canvas{
+        width: 100% !important;
+    }
+    
+}
 .toggle {
     position: absolute;
     right: 0;
